@@ -2,8 +2,13 @@
 
 #include <string>
 
-std::string crypt(std::string str, int key);
-
+/**
+ * @brief Chiffre une chaine de caractère avec une clé donnée
+ *
+ * @param str chaine de caractère à chiffrer
+ * @param key clé de chiffrement
+ * @return std::string résultat du chiffrement
+ */
 std::string crypt(std::string str, int key) {
     std::string result; // Créer une variable de type string nommée result qui contiendra le résultat
     for (int i = 0; i < str.length(); i++) // Pour chaque caractère de la chaine de caractère
