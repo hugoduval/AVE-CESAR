@@ -4,5 +4,7 @@
 
 int main(void)
 {
+    /* Appeler les fonctions de cryptage puis décryptage en leur donnant des paramètres puis les afficher le résultat*/
+
     return 0;
 }
