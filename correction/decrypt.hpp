@@ -9,8 +9,6 @@
  * @param key clé de déchiffrement
  * @return std::string résultat du déchiffrement
  */
-std::string decrypt(std::string str, int key);
-
 std::string decrypt(std::string str, int key)
 {
     std::string result; // Créer une variable de type string nommée result qui contiendra le résultat
