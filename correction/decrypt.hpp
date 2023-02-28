@@ -2,4 +2,4 @@
 
 #include <string>
 
-std::string decrypt(std::string str);
+std::string decrypt(std::string str, int key);
