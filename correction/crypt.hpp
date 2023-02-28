@@ -2,20 +2,24 @@
 
 #include <string>
 
+std::string crypt(std::string str, int key);
+
 std::string crypt(std::string str, int key) {
-    std::string resultat = "";
-    for (int i = 0; i < str.length(); i++) {
-        char caractere = str[i];
-        if (isalpha(caractere)) {
-            char minuscule = tolower(caractere);
-            char decale = ((minuscule - 'a') + key) % 26 + 'a';
-            if (isupper(caractere)) {
-                decale = toupper(decale);
-            }
-            resultat += decale;
-        } else {
-            resultat += caractere;
+    std::string result; // Créer une variable de type string nommée result qui contiendra le résultat
+    for (int i = 0; i < str.length(); i++) // Pour chaque caractère de la chaine de caractère
+    {
+        if (str[i] >= 'a' && str[i] <= 'z') // Si le caractère est une minuscule
+        {
+            result += char(int(str[i] + key - 'a') % 26 + 'a'); // On ajoute le caractère décalé de key à result
+        }
+        else if (str[i] >= 'A' && str[i] <= 'Z') // Si le caractère est une majuscule
+        {
+            result += char(int(str[i] + key - 'A') % 26 + 'A'); // On ajoute le caractère décalé de key à result
+        }
+        else // Si le caractère n'est pas une lettre
+        {
+            result += str[i]; // On ajoute le caractère à result
         }
     }
-    return resultat;
+    return result; // On retourne result
 }
